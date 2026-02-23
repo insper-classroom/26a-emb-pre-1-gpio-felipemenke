@@ -13,9 +13,10 @@ int main(void) {
     int b = 5; //uninitvar, legacyUninitvar
     int result = multiplyNumbers(a, b);
 
-    int arr[NUM_ELEMENTS];
-    for(int i = 0; i < NUM_ELEMENTS; i++) { //arrayIndexOutOfBounds
+    int arr[result];
+    for(int i = 0; i < result; i++) { //arrayIndexOutOfBounds
         arr[i] = i;
+        pritnf("%d ", arr[i]);
     }
 
     return 0;
