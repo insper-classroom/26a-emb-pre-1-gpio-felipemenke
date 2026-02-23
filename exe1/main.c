@@ -18,17 +18,14 @@ int main() {
 
   while (true) {
     gpio_put(LED_PIN_R, 1);
+    gpio_put(LED_PIN_L, 1);    
     sleep_ms(250);
-    
-    gpio_put(LED_PIN_L, 1);
-    sleep_ms(250);
-    
+
     gpio_put(LED_PIN_R, 0);
-    sleep_ms(250);
-
-
-
     gpio_put(LED_PIN_L, 0);
     sleep_ms(250);
+
+
+
   }
 }
