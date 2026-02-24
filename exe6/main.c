@@ -3,7 +3,7 @@
 #include "hardware/gpio.h"
 #include "pico/stdlib.h"
 
-int FIRST_GPIO = 2;
+const int FIRST_GPIO = 2;
 const int BTN_PIN_G = 28;
 
 // This array converts a number 0-9 to a bit pattern to send to the GPIOs
@@ -27,7 +27,7 @@ void seven_seg_init() {
     }
 }
 
-void seven_seg_display() {
+void seven_seg_display(int cnt) {
     int value = bits[cnt];
     for (int i = 0; i < 7; i++) {
         int gpio = FIRST_GPIO + i;
@@ -41,7 +41,6 @@ int main() {
 
     int cnt = 0;
     int last_btn = 1;
-    BUTTON_GPIO = FIRST_GPIO + 7;
 
     gpio_init(BTN_PIN_G);
     gpio_set_dir(BTN_PIN_G, GPIO_IN);
